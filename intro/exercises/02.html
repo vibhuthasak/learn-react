@@ -3,18 +3,50 @@
 <div id="root"></div>
 <script src="../react.development.js"></script>
 <script src="../react-dom.development.js"></script>
-<!-- 🐨 remove this line
 <script src="../babel.js"></script>
-🐨 remove this line -->
-<script type="text/javascript">
+
+<script type="text/babel">
 // 🐨 on the script tag above, change `type="text/javascript"`
 // to `type="text/babel"` so babel will transpile and run this code.
 
 // You're going to re-implement this using JSX!
-const element = React.createElement('div', {
-  className: 'container',
-  children: 'Hello World',
-})
+// const element = React.createElement('div', {
+//   className: 'container',
+//   children: 'Hello World',
+// })
+
+// const Message = ({msg}) => React.createElement("div", { className: "message"}, msg)
+// const helloWorld = React.createElement(Message, {msg: 'Hello World'})
+
+// const element = (
+//   <div className="container">
+//     {helloWorld}
+//     <Message msg="Hello World Again"> </Message>
+//     {Message({msg: "Hello world Again and Again"})}
+//   </div>
+// )
+
+// const Message = ({children}) => React.createElement("div", {className: "Message", children})
+const Message = ({children}) => (
+  <div className="message">
+    {children}
+  </div>
+)
+
+const element = (
+  <div className="container">
+    <Message> Hello world </Message>
+    <Message> Good Bye World </Message>
+  </div>
+)
+
+// function MyComponent(props) {
+//   return JSX
+// }
+
+// console.log(React.createElement(message, {msg: 'Hello world'}))
+// console.log(React.createElement("div", {className: "Message"}))
+
 
 // JSX is more intuitive than the raw React API and is easier to understand
 // when reading the code. It's fairly simple syntactic sugar on top of the
